@@ -13,19 +13,19 @@ import logo from "../assets/logo.png"; // Certifique-se de que o caminho está c
 export default function AdminMain() {
   return (
     <main className="flex-1 p-0">
-      {/* Banner de tela completa */}
-      <div className="w-full h-[300px] md:h-[300px] bg-[#F29F05] flex items-center justify-center mb-8 relative">
-        {/* Substitua o src abaixo pela logo da sua loja */}
+      {/* Banner de tela completa responsivo */}
+      <div className="w-full bg-[#F29F05] flex flex-col items-center justify-center mb-8 py-8 sm:py-12">
         <img
           src={logo}
           alt="Logo da Loja"
-          className="h-32 md:h-48 object-contain drop-shadow-xl mb-[6rem]"
+          className="max-h-32 sm:max-h-48 w-auto object-contain drop-shadow-xl mb-2"
         />
-        <h1 className="absolute bottom-2 left-1/2 -translate-x-1/2 text-3xl md:text-4xl font-bold text-white drop-shadow-lg">
+        <h1 className="mt-2 text-xl sm:text-3xl md:text-4xl font-bold text-white drop-shadow-lg text-center">
           Bem-vindo ao painel da Melhor Opção!
         </h1>
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 p-8">
+      {/* Grid adaptável para mobile/desktop */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 p-4 sm:p-8">
         {/* Clientes */}
         <div className="bg-white rounded-xl shadow p-6 flex flex-col items-center">
           <FaUsers className="text-[#F29F05] text-3xl mb-2" />

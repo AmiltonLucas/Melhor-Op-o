@@ -4,7 +4,7 @@ import AdminMain from "../Components/AdminMain";
 
 export default function AdminPanelPage() {
   return (
-    <div className="min-h-screen flex bg-white">
+    <div className="min-h-screen flex flex-col md:flex-row bg-white">
       <SidebarMenu />
       <AdminMain />
     </div>

@@ -11,7 +11,7 @@ export default function CadastroCliente() {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-white">
+    <div className="min-h-screen grid place-items-center bg-white">
       <form
         className="bg-white p-8 rounded-2xl shadow-lg flex flex-col gap-4 w-full max-w-md"
         onSubmit={handleSubmit}

@@ -1,11 +1,21 @@
-import React from "react";
-import { FaUserCircle, FaSignOutAlt, FaKey, FaGlobe } from "react-icons/fa";
+import React, { useState } from "react";
+import {
+  FaUserCircle,
+  FaSignOutAlt,
+  FaKey,
+  FaGlobe,
+  FaBars,
+  FaTimes,
+} from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 
 export default function Sidebar() {
   const navigate = useNavigate();
-  return (
-    <aside className="w-64 bg-white shadow-lg flex flex-col items-center py-8 px-4 min-h-screen">
+  const [open, setOpen] = useState(false);
+
+  // Conteúdo do menu
+  const menuContent = (
+    <>
       <div className="flex flex-col items-center mb-8">
         <div className="w-20 h-20 rounded-full bg-gray-100 flex items-center justify-center mb-2">
           <FaUserCircle className="text-[#F29F05] text-5xl" />
@@ -35,10 +45,45 @@ export default function Sidebar() {
           <FaSignOutAlt /> Encerrar sessão
         </button>
       </nav>
-
       <div className="mt-auto pt-8 w-full flex flex-col items-center">
         <span className="text-xs text-gray-400">© Front Dev Studio</span>
       </div>
-    </aside>
+    </>
+  );
+
+  return (
+    <>
+      {/* Sidebar fixa em telas grandes */}
+      <aside className="hidden md:flex w-64 bg-white shadow-lg flex-col items-center py-8 px-4 min-h-screen">
+        {menuContent}
+      </aside>
+
+      {/* Menu mobile */}
+      <div className="md:hidden w-full">
+        <button
+          className="fixed top-4 left-4 z-50 bg-white rounded-full shadow p-2"
+          onClick={() => setOpen(!open)}
+        >
+          {open ? (
+            <FaTimes className="text-[#F29F05] text-2xl" />
+          ) : (
+            <FaBars className="text-[#F29F05] text-2xl" />
+          )}
+        </button>
+        {open && (
+          <div
+            className="fixed inset-0 bg-transparent z-40"
+            onClick={() => setOpen(false)}
+          ></div>
+        )}
+        <aside
+          className={`fixed top-0 left-0 h-full w-64 bg-white shadow-lg flex flex-col items-center py-8 px-4 z-50 transition-transform duration-300 ${
+            open ? "translate-x-0" : "-translate-x-full"
+          }`}
+        >
+          {menuContent}
+        </aside>
+      </div>
+    </>
   );
 }

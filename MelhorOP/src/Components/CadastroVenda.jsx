@@ -11,12 +11,12 @@ export default function CadastroVenda() {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-white">
+    <div className="min-h-screen grid place-items-center bg-white p-4 w-full">
       <form
         className="bg-white p-8 rounded-2xl shadow-lg flex flex-col gap-4 w-full max-w-md"
         onSubmit={handleSubmit}
       >
-        <h2 className="text-2xl font-bold mb-2 text-[#F29F05]">
+        <h2 className="text-2xl text-center font-bold mb-2 text-[#F29F05]">
           Cadastrar Venda
         </h2>
         <input
@@ -45,7 +45,7 @@ export default function CadastroVenda() {
         />
         <button
           type="submit"
-          className="py-2 bg-green-400 text-white rounded-lg font-semibold hover:bg-green-500 transition"
+          className="py-2 bg-green-500 text-white rounded-lg font-semibold hover:bg-green-600 transition"
         >
           Cadastrar
         </button>
