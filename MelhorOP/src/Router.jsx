@@ -1,7 +1,7 @@
 import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import LoginPage from "./Pages/LoginPage";
-import AdminPanelPage from "./Pages/AdminPanelPage";
+import AdminPainelPage from "./Pages/AdminPainelPage";
 import CadastroClientePage from "./Pages/CadastroClientePage";
 import CadastroProdutoPage from "./Pages/CadastroProdutoPage";
 import CadastroVendaPage from "./Pages/CadastroVendaPage";
@@ -17,13 +17,15 @@ import EditarVendedorPage from "./Pages/EditarVendedorPage";
 import EsqueciSenhaPage from "./Pages/EsqueciSenhaPage";
 import AlterarSenhaPage from "./Pages/AlterarSenhaPage";
 import Error404 from "./Error/Error404";
+import HomePage from "./Pages/HomePage";
 
 export default function AppRoutes() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<LoginPage />} />
-        <Route path="/admin" element={<AdminPanelPage />} />
+        <Route path="/" element={<HomePage />} />
+        <Route path="/admin" element={<LoginPage />} />
+        <Route path="/admin-painel" element={<AdminPainelPage />} />
         <Route path="/clientes" element={<ClientesPage />} />
         <Route path="/produtos" element={<ProdutosPage />} />
         <Route path="/vendas" element={<VendasPage />} />

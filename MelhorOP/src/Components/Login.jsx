@@ -10,7 +10,7 @@ export default function Login() {
   const handleSubmit = (e) => {
     e.preventDefault();
     // lógica de login
-    navigate("/admin");
+    navigate("/admin-painel");
   };
 
   return (
